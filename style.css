@@ -1,0 +1,222 @@
+
+/*預設值調整*/
+html,body {
+    margin: 0;
+    padding: 0;
+    max-width: 2000px;
+
+    user-select:none; /* standard syntax */
+    -webkit-user-select:none; /* for Chrome、Safari */
+    -moz-user-select:none;  /* for Mozilla、Firefox */
+}
+
+html {
+    background-color: #000;
+}
+
+body {
+    margin: 0 auto;
+}
+ul,li {
+    list-style: none;
+}
+
+/* 導覽列 */
+.nav {
+    margin: 0 auto;
+    width: 100%;
+    height: 70px;
+    background-color: #000;
+    display: flex;
+
+}
+
+a {
+    text-decoration: none;
+    color: #eee;
+}
+
+.logo {
+    background-image: url(./logo.png);
+    background-size: 100%;
+    margin: 10px 30px;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+}
+
+.nav > ul {
+    width: 45%;
+    display: flex;
+    color: #ddd;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav > ul > li {
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    font-family: 'Barlow Semi Condensed';
+    font-size: 1.3em;
+    line-height: 40px;
+    margin: 10px 15px;
+    transition: ease-out 0.3s;
+}
+
+.nav li:hover {
+    color: #fff;
+    border-radius: 15px;
+    border: 2px solid #eee;
+}
+
+/* 電影海報 */
+.container {
+    width: 100%;
+    height: 760px;
+    display: flex;
+    
+    background-color: #000;
+}
+
+/* 海報大小設定 */
+.film {
+    margin: 0 auto;
+    /*background-color: #ddd;*/
+    width: 35%;
+    height: 700px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/* 手機裝置 */
+@media (max-width:700px){
+    .nav ul {
+        width: 60%;
+    }
+    .container {
+        display: block;
+    }
+    .film {
+        width: 100%;
+    }
+}
+
+/* more 選項 */
+.film .more {
+    margin: 0 auto;
+    position: relative;
+    top: 400px;
+    font-family: 'Barlow Semi Condensed';
+    font-size: 1.7em;
+    width: 150px;
+    line-height: 2em;
+    text-align: center;
+    border: 1px solid #ccc;
+    transition: ease-in 0.3s;
+}
+
+.film .more:hover {
+    
+    background-color: #ccc;
+}
+
+.film .more:hover a {
+    color: #222;
+}
+
+/* 電影名稱的字體和大小設定 */
+.film h2 {
+    position: relative;
+    color: #ccc;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 500;
+    font-size: 4em;
+    text-align: center;
+    top: 400px;
+    text-shadow: 3px 3px 10px #000;
+    cursor: pointer;
+    transition: ease-in 0.3s;
+    user-select:text; /* standard syntax */
+    -webkit-user-select:text; /* for Chrome、Safari */
+    -moz-user-select:text;  /* for Mozilla、Firefox */
+}
+
+.M2 h2 {
+    font-size: 2.7em;
+}
+
+.film h2:hover{
+    color: #fff;
+}
+
+/* 海報圖片連結 */
+
+.M1 {
+    background-image: url(./img/jp_kr/LINE_ALBUM_日韓_221225_0.jpg);
+    
+}
+
+.M2 {
+    background-image: url(./img/jp_kr/LINE_ALBUM_日韓_221225_1.jpg);
+    
+}
+
+.M3 {
+    background-image: url(./img/jp_kr/LINE_ALBUM_日韓_221225_2.jpg);
+    
+}
+
+
+
+/* 海報底部漸層遮罩 */
+.mask {
+    width: 100%;
+    height: 700px;
+    background-image: linear-gradient(to top,#000,transparent 60%);
+    
+}
+
+/* 網頁底部 */
+.footer {
+    position: relative;
+    margin: 0 auto;
+    max-width: 90%;
+    height: 80px;
+    top: 30px;
+    
+}
+.footer img {
+    position: fixed;
+    top: 550px;
+    left: 0;
+    z-index: -1;
+    margin: 0;
+    width: 120%;
+}
+.footer ul {
+    width: 100%;
+    height: 50px;
+    display: flex;  
+    justify-content: space-between;
+    color: #ccc;
+    
+}
+
+.footer li {
+    width: 50px;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 600,
+  'GRAD' 200,
+  'opsz' 48;
+  font-size: 1.5em;
+}
