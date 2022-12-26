@@ -32,6 +32,14 @@ ul,li {
 
 }
 
+.active {
+    
+    border-radius: 15px;
+    background-color: #ccc;
+}
+.active a {
+    color: #222;
+}
 a {
     text-decoration: none;
     color: #eee;
@@ -68,7 +76,7 @@ a {
     transition: ease-out 0.3s;
 }
 
-.nav li:hover {
+.nav li:hover:not(.active) {
     color: #fff;
     border-radius: 15px;
     border: 2px solid #eee;
@@ -78,7 +86,6 @@ a {
 .container {
     width: 100%;
     display: flex;
-    
     background-color: #000;
 }
 
@@ -94,14 +101,16 @@ a {
     background-position: center center;
 }
 
+
+
 /* 手機裝置 */
 
 
 /* more 選項 */
 .film .more {
-    margin: 0 auto;
     position: relative;
-    bottom: 0%;
+    top: 5%;
+    margin: 0 auto;
     font-family: 'Barlow Semi Condensed';
     font-size: 1.7em;
     width: 150px;
@@ -121,12 +130,28 @@ a {
 }
 
 /* 電影名稱的字體和大小設定 */
-.film h2 {
+
+.film li {
+    width: 100%;
+    
+}
+
+.film .FilmTitle {
+    width: 100%;
+    height: 300px;
     position: relative;
+    vertical-align: text-bottom;
+    overflow: hidden;
+    bottom: 7vw;
+}
+.film h2 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
     color: #ccc;
     font-family: 'Noto Sans TC', sans-serif;
     font-weight: 500;
-    font-size: 3.5vw;
+    font-size: 5vw;
     text-align: center;
     text-shadow: 3px 3px 10px #000;
     cursor: pointer;
@@ -145,7 +170,14 @@ a {
 
 /* 海報圖片連結 */
 
+.imgbox {
+    height: 40vw;
+    width: 100%;
+    overflow: hidden;
+}
 .film img {
+    object-fit: cover;
+    object-position: center;
     background-size: 100%;
     opacity: .8;
     width: 100%;
@@ -158,17 +190,24 @@ a {
 /* 海報底部漸層遮罩 */
 .mask {
     position: absolute;
-    top: 30%;
+    top:0;
+    height: 100%;
     width: 100%;
-    height: 70%;
     background-image: linear-gradient(to top,#000,transparent 60%);
     
 }
-
-.mask ul {
-    width: 85%;
+.film .title {
     position: relative;
-    top:12vw;
+    margin: 0 auto;
+    height: 13vw;
+    overflow: hidden;
+}
+.film ul {
+    position: relative;
+    margin: 0 auto;
+    top: 15vw;
+    width: 85%;
+    height: 300px;
     margin: 0 auto;
     padding: 0 ;
 }
@@ -230,13 +269,22 @@ a {
         height: 140vw;
     }
 
-    .film:hover img{
-        opacity: .6;
+    .imgbox {
+        height: 100%;
     }
 
+    .film:hover img{
+        opacity: .8;
+    }
+
+    .film .title {
+        height: 30vw;
+        }
     .film h2 {
         font-size: 3.5rem;
     }
+
+    
 
     .mask {
         height: 140vw;
@@ -273,7 +321,13 @@ a {
     .nav a {
         font-size: 5vw;
     }
+    .film .title {
+        height: 23vw;
+    }
 
+    .film h2 {
+        font-size: 10vw;
+    }
     .mask {
         height: 140vw;
         top: 0%;
